@@ -1,40 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-  position: relative;
-  height: 100%;
+	position: relative;
+	height: 100%;
 }
 
 body {
-  background: #eee;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
+	background: #eee;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+  background-color: white;
 }
 
 .swiper {
-  width: 100%;
-  height: 100vh;
+	width: 100%;
+	height: 100vh;
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: rgb(51, 51, 51);
-  height: 100vh !important;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	text-align: center;
+	font-size: 18px;
+	height: 100vh !important;
+	/* Center slide text vertically */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 /*
 .swiper-slide img {
@@ -45,83 +42,145 @@ body {
 }
 */
 
-
-.show{
-  animation: draw 1s  ;
-  background-color: orange;
-  animation-delay: 4.5s;
-
-
+.show {
+	animation: draw 1s;
+	background-color: orange;
+	animation-delay: 4.5s;
 }
-.show2{
-  animation: draw 1.8s  ;
-  background-color: red;
-
+.show2 {
+	animation: draw 1.8s;
+	background-color: red;
 }
 
 @keyframes draw {
-  from{
-    transform: translateY(100px);
-  }
+	from {
+		transform: translateY(100px);
+	}
 
-  to{
-    transform: translateY(0);
-
-  }
+	to {
+		transform: translateY(0);
+	}
 }
 @keyframes draw2 {
-  from{
-    transform: translateY(100px);
-  }
+	from {
+		transform: translateY(100px);
+	}
 
-  to{
-    transform: translateY(0);
-
-  }
+	to {
+		transform: translateY(0);
+	}
 }
-
-
-
-
 
 /*
 *Titles
 */
 
-.title{
-position:relative;
-padding:0;
+.title {
+	position: relative;
+	padding: 0;
 }
-.title::before{
-width:3px;
-height:100%;
-content:'';
-background:red;
-position:absolute;
-left:0;
-transform:translateX(-5px)
+.title::before {
+	width: 3px;
+	height: 100%;
+	content: '';
+	background: rgb(255,134,60);
+background: linear-gradient(100deg, rgba(255,134,60,1) 0%, rgba(255,241,0,0.8645833333333334) 100%);
+	position: absolute;
+	left: 0;
+	transform: translateX(-15px);
 }
-
-
 
 .swiper-pagination {
-width:auto !important;
-left:0 !important;
+	width: 150px !important;
+	left: 0px !important;
+	display: flex;
+	flex-direction: column;
+}
+.swiper-pagination-bullet::before {
+	width: 20% !important;
+	height: 2px;
+	content: '';
+	background-color: white;
+	transition: all 1s ease;
 }
 
-.swiper-pagination-bullet{
-width:25px !important;
-height:3px !important;
-border-radius:0;
-z-index:20;
-transition:all 1s ease;
-margin-bottom:15px !important;
-background:red !important;
-
-
+.swiper-pagination-bullet {
+	width: 100% !important;
+	height: 0px !important;
+	border-radius: 0;
+	z-index: 20;
+	transition: all 1s ease;
+	margin-bottom: 35px !important;
+	display: flex !important;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 18px;
+	font-size: 16px;
+	color: white;
+  font-weight: 600;
+	background-color: transparent;
 }
 
-.swiper-pagination-bullet-active{
-  width:45px !important;
+.swiper-pagination-bullet-active::before {
+	width: 35% !important;
+}
+.swiper-pagination-bullet-active {
+	transform: scale(1.15);
+}
 
+.white {
+	color: white !important;
+}
+
+.black {
+	color: #313131 !important;
+}
+
+.black::before {
+	background-color: #313131 !important;
+}
+
+
+
+
+/*
+*SCROLL ANIAMTION
+*/
+
+
+.scroll-downs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  
+  width :34px;
+  height: 55px;
+}
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
 }
