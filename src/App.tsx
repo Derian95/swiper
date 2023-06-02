@@ -15,19 +15,19 @@ import { Club } from './views/Club'
 
 
 function App() {
-  const pagination = {
-    clickable: true,
-   
-  };
+	const pagination = {
+		clickable: true,
+		renderBullet: function (index:number, className:string) {
+		  return '<span class="' + className +  ' ">' + (index ==0?'Inicio':index ==1?'Nosotros':index ==2?'Salas':index ==3?'Club':index ==4?'Servicios':'') + "</span>";
+		},
+	  };
 
   return (
 		<>
 			<SideBar />
 			<Swiper
 				direction={'vertical'}
-				pagination={{
-          clickable:true,
-        }}
+				pagination={pagination}
 				mousewheel={true}
 				modules={[Pagination, Mousewheel]}
 				className='mySwiper'

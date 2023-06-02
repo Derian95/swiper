@@ -1,8 +1,7 @@
-import patter from '../assets/patter.svg'
+import patter from '../assets/ra.svg'
 export const Hall = () => {
 	return (
-		<div className='h-screen w-full bg-[#FFF7F4]  flex flex-col justify-center items-start gap-8 py-24  px-64  relative'>
-            <img src={patter} className='w-40 h-40 absolute ' alt="" />
+		<div style={{backgroundImage:`url(${patter})`}} className='h-screen w-full bg-[#FFF7F4]  flex flex-col justify-center items-start gap-8 py-24  px-64  relative'>
 			<p className='title text-start text-[#313131] font-semibold text-[44px] mb-5'>
 				Nuestras salas
 			</p>
@@ -23,6 +22,8 @@ export const Hall = () => {
 					</p>
 				</div>
 			</div>
+            {/* <img src={patter} className='w-full  absolute h-full' alt="" /> */}
+
 		</div>
 	)
 }
